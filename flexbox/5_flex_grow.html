@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex grow</title>
+    <style>
+        
+        body{
+            background-color: black;
+            font-size: 1rem;
+        }
+        h2{
+            color: white;
+            font-size: 2rem;
+        }
+        .container-flex{
+            height: 200px;
+            border: 4px solid red;
+            color: white;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .container-flex > div{
+            border: 4px solid white;
+            padding: 4px;
+            margin: 4px; 
+        }
+
+        .Basis1, .Basis3{
+            flex-grow: 0;
+        }
+        .Basis2{
+            flex-grow: 2;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Row</h2>
+    <div class="container-flex">
+        <div class="Basis1">item teste 01</div>
+        <div class="Basis2">item teste 02</div>
+        <div class="Basis3">item teste 03</div>
+        <!--<div>04</div>
+        <div>05</div>
+        <div>06</div>
+        <div>07</div>
+        <div>08</div>
+        <div>09</div>
+        <div>10</div>-->
+    </div>
+</body>
+</html>
