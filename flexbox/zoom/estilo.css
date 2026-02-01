@@ -1,18 +1,50 @@
-body{
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+.container{
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    grid-template-areas:
+    'cabecalho cabecalho'
+    'capa-conteudo capa-imagem'
+    'organizacao-imagem organizacao-conteudo'
+    ;
+    row-gap: 20px;
+    column-gap: 20px;
 }
+
+
+
 
 header{
     display: flex;
     align-items: center;
     padding: 0px 10px;
-    border-bottom: 1px solid blueviolet;
+    grid-area: cabecalho;
 }
 
-nav{
-    flex-grow: 1;
+section#capa-conteudo{
+    grid-area: capa-conteudo;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+section#capa-imagem{
+    grid-area: capa-imagem;
+}
+section#organizacao-imagem{
+    grid-area: organizacao-imagem;
+}
+section#organizacao-conteudo{
+    grid-area: organizacao-conteudo;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section#organizacao-imagem > img, section#capa-imagem > img{
+    width: 100%;
 }
 
 ul{
@@ -24,11 +56,14 @@ ul a:hover{
     color: #0b5cff;
 }
 
-
-nav a:link{
+nav{
+    flex-grow: 1;
+}
+nav a:link, a:visited{
     padding: 10px;
     text-decoration: none;
     color: #484848;
+    font-size: 1.2rem;
 }
 
 .botao{
@@ -37,6 +72,7 @@ nav a:link{
     border: 2px solid #0b5cff;
     border-radius: 25px;
     padding: 5px 30px;
+    align-self: flex-start;
 }
 
 .botao.destaque{
@@ -53,4 +89,56 @@ nav a:link{
 .botao:hover{
     background-color: #d21eff;
     color: white;
+}
+
+footer{
+    background: #f2f2f2;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/******************************** Tipografia **/
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+}
+h1{
+    font-size: 2.5rem;
+}
+h2{
+    font-size: 2.5rem;
+}
+h3{
+    font-size: 1.2rem;
+}
+
+.texto-destaque{
+    color: #6f53ed;
+}
+
+
+@media(max-width:768px){
+    .container{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    'cabecalho'
+    'capa-conteudo'
+    'capa-imagem'
+    'organizacao-conteudo'
+    'organizacao-imagem'
+    ;
+    row-gap: 20px;
+    column-gap: 20px;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0px 10px;
+    grid-area: cabecalho;
+}
+
 }

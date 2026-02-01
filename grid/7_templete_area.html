@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid area</title>
+    <style>
+        body{
+            font-size: 1.2rem;
+            background-color: black;
+            margin: 0;
+            color: white;
+        }
+
+        .grid{
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            row-gap: 20px;
+            column-gap: 20px;
+            grid-template-areas:    
+            'cabecalho cabecalho'
+            'navegacao principal'
+            'rodape rodape'
+            ;
+        }
+
+        @media(max-width: 600px){
+            .grid{
+            grid-template-columns: 1fr;
+            grid-template-areas:    
+            'cabecalho cabecalho'
+            'navegacao navegacao'
+            'principal principal'
+            'rodape rodape'
+            ;
+            
+        }
+        }
+
+        header{grid-area: cabecalho;}
+        nav{grid-area: navegacao}
+        main{grid-area: principal}
+        footer{grid-area: rodape}
+        
+     
+        header, nav, main, footer{
+            border: 5px solid blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <header>Cabacalho</header>
+        <nav>      menu de navegacao                      </nav>
+        <main>
+            <h2>conteudo do sistema</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste nostrum ducimus facilis sunt dolores obcaecati necessitatibus similique laudantium perspiciatis iure a modi velit itaque molestiae sequi officiis officia, nobis maxime.</p>
+        </main>
+        <footer>Rodape</footer>
+    </div>
+</body>
+</html>
